@@ -1,0 +1,152 @@
+---
+title: Overview
+permalink: /
+description: "gog is a single Go CLI for Gmail, Calendar, Drive, Docs, Sheets, Slides, Forms, Apps Script, Contacts, Tasks, and Workspace admin — built for terminals, scripts, CI, and coding agents."
+---
+
+![gog banner](/images/readme-banner.jpg)
+
+<CardGroup cols={2}>
+  <Card title="Install in minutes" icon="download" href="/start/install">
+    Pick Homebrew, Docker, Windows, or source builds.
+  </Card>
+  <Card title="Authenticate one account" icon="key" href="/start/quickstart">
+    Go from zero to Gmail, Calendar, and Drive queries in five minutes.
+  </Card>
+  <Card title="Explore real workflows" icon="sparkles" href="/guides/gmail/gmail-workflows">
+    Start with Gmail, Drive audits, Docs editing, Sheets, and Slides.
+  </Card>
+  <Card title="Browse every command" icon="terminal" href="/commands">
+    Jump into the generated reference for the full CLI surface.
+  </Card>
+</CardGroup>
+
+## Choose your mode
+
+<Tabs>
+  <Tab title="Read">
+
+```bash
+gog gmail search 'newer_than:7d' --max 10
+gog calendar events --today
+gog drive ls --max 20 --json
+```
+
+For agent-friendly reads, pair `--json` with service-specific workflows from the [Guides](/guides/gmail/gmail-workflows) tab.
+
+  </Tab>
+  <Tab title="Audit">
+
+```bash
+gog drive tree --parent <folderId> --depth 2
+gog drive du --parent <folderId> --max 20 --json
+gog contacts dedupe --preview
+```
+
+Use `gog` when you want a stable, parseable audit shape before you allow any mutation workflow.
+
+  </Tab>
+  <Tab title="Build">
+
+```bash
+gog docs format <docId> --match Status --bold --font-size 18
+gog sheets table append <spreadsheetId> Tasks 'Ship README|done'
+gog slides create-from-markdown "Weekly update" --content-file slides.md
+```
+
+Move from inspection to controlled writes once your auth, safety profile, and account routing are in place.
+
+  </Tab>
+</Tabs>
+
+<AccordionGroup>
+  <Accordion title="One command surface everywhere" icon="terminal">
+    `gog` is built so a person at a terminal, a CI job, and an agent client can use the same commands without switching mental models.
+  </Accordion>
+  <Accordion title="Safety is layered, not implied" icon="shield-check">
+    Preview flows, `--readonly`, allowlists, no-send rules, and baked safety profiles make it possible to narrow the CLI before handing it to automation.
+  </Accordion>
+  <Accordion title="The live binary generates its contract" icon="wand-magic-sparkles">
+    The docs, command index, and service-level skills are generated from the current CLI schema, so the reference stays aligned with the actual binary.
+  </Accordion>
+</AccordionGroup>
+
+## Try it
+
+After you store an OAuth client and authorize an account ([Quickstart](/start/quickstart) walks through the five-minute version), everything is a one-liner.
+
+```bash
+# Search this week's mail and read a sanitized message body for an agent.
+gog gmail search 'newer_than:7d' --max 10
+gog gmail get <messageId> --sanitize-content --json
+
+# Today's calendar.
+gog calendar events --today
+
+# Workspace user and org-unit management with Admin SDK / domain-wide delegation.
+gog --account admin@example.com admin users create ada@example.com \
+  --first-name Ada --last-name Lovelace --change-password
+gog --account admin@example.com admin orgunits list --type all
+
+# Audit a Drive folder without changing anything.
+gog drive tree --parent <folderId> --depth 2
+gog drive du   --parent <folderId> --max 20 --json
+
+# Edit a Doc, append to a Sheet table, push slides from Markdown.
+gog docs format <docId> --match Status --bold --font-size 18
+gog sheets table append <spreadsheetId> Tasks 'Ship README|done'
+gog slides create-from-markdown "Weekly update" --content-file slides.md
+```
+
+`--json` produces a stable JSON envelope on stdout, `--plain` produces TSV; human progress, prompts, and warnings always go to stderr so pipes stay parseable.
+
+## What gog does
+
+- **One binary, every API.** Gmail, Calendar, Drive, Docs, Sheets, Slides, Forms, Apps Script, Contacts, People, Tasks, Classroom, Chat, Groups, Keep, and Workspace Admin.
+- **Stable output.** `--json` for scripts, `--plain` TSV for `awk`, human output on stderr.
+- **Runtime discovery.** `gog schema --json` exposes command shape, stable exit codes, output modes, and effective safety state.
+- **Multi-account, multi-client.** Many Google accounts and OAuth client projects in one config; OAuth, direct access tokens, ADC, and Workspace service accounts all supported.
+- **One automation contract.** Humans, scripts, CI, and agents use the same commands, with JSON/TSV output, non-interactive operation, stable exit codes, runtime read-only enforcement, untrusted-content wrapping, command guards, and baked safety profiles.
+- **Preview-first audits.** Drive `tree`, `du`, `inventory`; Contacts `dedupe` previews by default and requires explicit `--apply` for guarded merges; raw API JSON dumps never mutate remote state.
+- **Generated reference.** Every command has a docs page, and service-level agent skills are generated from the same `gog schema --json` contract.
+
+The short version is in [Why gog](/start/why-gog): workflow-first commands, stdout
+as an API, identity routing, layered safety, and a contract generated from the
+live binary.
+
+## Pick your path
+
+- **Trying it.** [Install](/start/install) → [Quickstart](/start/quickstart). Five minutes from `brew install` to your first authenticated query.
+- **Understanding the design.** [Why gog](/start/why-gog) explains what the project optimizes for and where its boundaries are.
+- **Wiring up automation.** [Automation](/reference/automation), [Safety Profiles](/reference/safety-profiles), and [Agent skills](/reference/agent-skills). Discover the active contract and lock the binary down before handing it to an untrusted caller.
+- **Serving MCP tools.** [MCP server](/reference/mcp-server) exposes typed, allowlisted tools for agent clients without a generic command bridge.
+- **Discovering runtime contracts.** [Automation](/reference/automation) explains root help, schema metadata, safety controls, and stable exit codes.
+- **Polling local events.** [Drive and Docs polling](/reference/drive-and-docs-polling) persists cursors and optionally invokes trusted shell hooks.
+- **Persisting auth and state.** [Paths and State](/reference/paths-and-state) covers `GOG_HOME`, per-kind directories, XDG paths, and legacy compatibility.
+- **Running Workspace at scale.** [Auth Clients](/start/auth-clients) for service accounts, named OAuth clients, and domain-wide delegation.
+- **Managing Workspace.** [Workspace Admin](/guides/workspace/workspace-admin) covers user creation, cleanup, organizational units, and group administration.
+- **Backing up an account.** [Backup](/guides/backup/encrypted-backups) before pointing `gog backup push` at a busy mailbox.
+- **Selecting private Photos media.** [Photos Picker](/guides/photos/photos-picker) keeps access limited to items the user explicitly chooses.
+- **Managing YouTube.** [YouTube](/guides/youtube/youtube) covers API-key reads, account OAuth, subscriptions, playlists, and mutation safety.
+- **Grouping Docs edits atomically.** [Google Docs request batches](/guides/docs-sheets-slides/google-docs-request-batches) covers persisted, revision-locked request queues and explicit recovery modes.
+- **Verifying real API behavior.** [Live testing](/reference/live-testing) covers the dedicated-account smoke suite, cleanup, retries, and optional infrastructure.
+- **Looking up a flag.** The [Command Index](/commands) has a generated page for every subcommand.
+- **Comparing Discovery-driven CLIs.** Reproduce the [gog and gws evaluation](/reference/gog-vs-gws) instead of relying on a stale feature table.
+
+## Follow the structure
+
+<CardGroup cols={3}>
+  <Card title="Start" icon="rocket-launch" href="/start/install">
+    Install, quickstart, auth clients, and the design rationale.
+  </Card>
+  <Card title="Guides" icon="book-open" href="/guides/gmail/gmail-workflows">
+    Workflow-first tutorials for Gmail, Drive, Docs, Sheets, Slides, Contacts, and Workspace operations.
+  </Card>
+  <Card title="Reference" icon="file-lines" href="/reference/automation">
+    Automation, safety, MCP, paths, testing, and deeper implementation notes.
+  </Card>
+</CardGroup>
+
+## Project
+
+Active development; the [changelog](https://github.com/openclaw/gogcli/blob/main/CHANGELOG.md) tracks what shipped recently. Goals and non-goals live in the [spec](/reference/spec). Released under the [MIT license](https://github.com/openclaw/gogcli/blob/main/LICENSE). Not affiliated with Google.

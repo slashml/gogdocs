@@ -1,0 +1,257 @@
+{
+  "name": "gog",
+  "logo": {
+    "light": "/images/gog-logo.svg",
+    "dark": "/images/gog-logo.svg",
+    "href": "https://gogcli.sh/"
+  },
+  "favicon": "/images/gog-mark.svg",
+  "font": {
+    "headings": {
+      "family": "Inter"
+    },
+    "body": {
+      "family": "Inter"
+    },
+    "code": {
+      "family": "JetBrains Mono"
+    }
+  },
+  "colors": {
+    "primary": "#4285F4",
+    "light": "#34A853",
+    "dark": "#0F172A",
+    "background": {
+      "light": "#FBFCFF",
+      "dark": "#0B1020"
+    },
+    "anchors": {
+      "from": "#4285F4",
+      "to": "#34A853"
+    }
+  },
+  "background": {
+    "style": "gradient"
+  },
+  "layout": {
+    "rounded": "default",
+    "wide": true
+  },
+  "sidebar": {
+    "items": "container"
+  },
+  "topbar": {
+    "style": "default"
+  },
+  "topbarCtaButton": {
+    "name": "GitHub",
+    "url": "https://github.com/openclaw/gogcli"
+  },
+  "topAnchor": {
+    "name": "Home",
+    "icon": "none"
+  },
+  "tabs": [
+    {
+      "name": "Start",
+      "icon": "rocket-launch",
+      "iconType": "regular",
+      "url": "start"
+    },
+    {
+      "name": "Guides",
+      "icon": "book-open",
+      "iconType": "regular",
+      "url": "guides"
+    },
+    {
+      "name": "Commands",
+      "icon": "terminal",
+      "iconType": "regular",
+      "url": "commands"
+    },
+    {
+      "name": "Reference",
+      "icon": "file-lines",
+      "iconType": "regular",
+      "url": "reference"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Website",
+      "icon": "globe",
+      "url": "https://gogcli.sh/"
+    },
+    {
+      "name": "GitHub",
+      "icon": "github",
+      "url": "https://github.com/openclaw/gogcli"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Home",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "group": "Start",
+      "pages": [
+        "start/install",
+        "start/quickstart",
+        "start/auth-clients",
+        "start/why-gog"
+      ]
+    },
+    {
+      "group": "Gmail",
+      "pages": [
+        "guides/gmail/gmail-workflows",
+        "guides/gmail/gmail-auto-reply",
+        "guides/gmail/gmail-watch",
+        "guides/gmail/email-tracking",
+        "guides/gmail/email-tracking-worker"
+      ]
+    },
+    {
+      "group": "Drive & Files",
+      "pages": [
+        "guides/drive-files/drive-audits",
+        "guides/drive-files/raw-api-dumps",
+        "guides/drive-files/sensitive-field-audit"
+      ]
+    },
+    {
+      "group": "Docs, Sheets & Slides",
+      "pages": [
+        "guides/docs-sheets-slides/google-docs-editing",
+        "guides/docs-sheets-slides/google-docs-request-batches",
+        "guides/docs-sheets-slides/sedmat-formatting",
+        "guides/docs-sheets-slides/sheets-batch-updates",
+        "guides/docs-sheets-slides/sheets-tables",
+        "guides/docs-sheets-slides/sheets-formatting",
+        "guides/docs-sheets-slides/google-slides-from-markdown",
+        "guides/docs-sheets-slides/google-slides-template-text-replacement",
+        "guides/docs-sheets-slides/slides-introspection",
+        "guides/docs-sheets-slides/slides-text-editing",
+        "guides/docs-sheets-slides/slides-tables",
+        "guides/docs-sheets-slides/slides-structure"
+      ]
+    },
+    {
+      "group": "Contacts",
+      "pages": [
+        "guides/contacts/contacts-dedupe",
+        "guides/contacts/update-contacts-from-json"
+      ]
+    },
+    {
+      "group": "Workspace",
+      "pages": [
+        "guides/workspace/workspace-admin",
+        "guides/workspace/zoom-auth-setup"
+      ]
+    },
+    {
+      "group": "Backup",
+      "pages": [
+        "guides/backup/encrypted-backups"
+      ]
+    },
+    {
+      "group": "Photos",
+      "pages": [
+        "guides/photos/photos-picker"
+      ]
+    },
+    {
+      "group": "YouTube",
+      "pages": [
+        "guides/youtube/youtube"
+      ]
+    },
+    {
+      "group": "Command Index",
+      "pages": [
+        "commands/index",
+        "commands/gog-admin",
+        "commands/gog-analytics",
+        "commands/gog-api",
+        "commands/gog-appscript",
+        "commands/gog-auth",
+        "commands/gog-backup",
+        "commands/gog-batch",
+        "commands/gog-calendar",
+        "commands/gog-chat",
+        "commands/gog-classroom",
+        "commands/gog-completion",
+        "commands/gog-config",
+        "commands/gog-contacts",
+        "commands/gog-docs",
+        "commands/gog-download",
+        "commands/gog-drive",
+        "commands/gog-forms",
+        "commands/gog-gmail",
+        "commands/gog-groups",
+        "commands/gog-keep",
+        "commands/gog-login",
+        "commands/gog-logout",
+        "commands/gog-ls",
+        "commands/gog-maps",
+        "commands/gog-mcp",
+        "commands/gog-me",
+        "commands/gog-meet",
+        "commands/gog-open",
+        "commands/gog-people",
+        "commands/gog-photos",
+        "commands/gog-schema",
+        "commands/gog-search",
+        "commands/gog-searchconsole",
+        "commands/gog-send",
+        "commands/gog-sheets",
+        "commands/gog-sites",
+        "commands/gog-slides",
+        "commands/gog-status",
+        "commands/gog-tasks",
+        "commands/gog-time",
+        "commands/gog-upload",
+        "commands/gog-version",
+        "commands/gog-whoami",
+        "commands/gog-youtube",
+        "commands/gog-zoom"
+      ]
+    },
+    {
+      "group": "Reference",
+      "pages": [
+        "reference/automation",
+        "reference/safety-profiles",
+        "reference/agent-skills",
+        "reference/mcp-server",
+        "reference/paths-and-state",
+        "reference/date-and-time-input-formats",
+        "reference/drive-and-docs-polling",
+        "reference/live-testing",
+        "reference/gog-vs-gws",
+        "reference/generated-command-reference",
+        "reference/spec",
+        "reference/releasing-gogcli"
+      ]
+    },
+    {
+      "group": "Refactor",
+      "pages": [
+        "reference/refactor/index",
+        "reference/refactor/exports",
+        "reference/refactor/options",
+        "reference/refactor/output",
+        "reference/refactor/templates"
+      ]
+    }
+  ],
+  "footerSocials": {
+    "github": "https://github.com/openclaw/gogcli"
+  }
+}

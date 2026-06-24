@@ -1,0 +1,75 @@
+# `gog calendar`
+
+> Generated from `gog schema --json`. Do not edit this page by hand; run `make docs-commands`.
+
+Google Calendar
+
+## Usage
+
+```bash
+gog calendar (cal) <command> [flags]
+```
+
+## Parent
+
+- [gog](/commands/gog)
+
+## Subcommands
+
+- [gog calendar acl](/commands/gog-calendar-acl) - List calendar ACL
+- [gog calendar alias](/commands/gog-calendar-alias) - Manage calendar aliases
+- [gog calendar calendars](/commands/gog-calendar-calendars) - List calendars
+- [gog calendar colors](/commands/gog-calendar-colors) - Show calendar colors
+- [gog calendar conflicts](/commands/gog-calendar-conflicts) - Find busy-time overlaps across calendars
+- [gog calendar create](/commands/gog-calendar-create) - Create an event
+- [gog calendar create-calendar](/commands/gog-calendar-create-calendar) - Create a new secondary calendar
+- [gog calendar delete](/commands/gog-calendar-delete) - Delete an event
+- [gog calendar delete-calendar](/commands/gog-calendar-delete-calendar) - Delete an owned secondary calendar
+- [gog calendar event](/commands/gog-calendar-event) - Get event
+- [gog calendar events](/commands/gog-calendar-events) - List events from a calendar or all calendars
+- [gog calendar focus-time](/commands/gog-calendar-focus-time) - Create a Focus Time block
+- [gog calendar freebusy](/commands/gog-calendar-freebusy) - Get free/busy
+- [gog calendar move](/commands/gog-calendar-move) - Move an event to another calendar
+- [gog calendar out-of-office](/commands/gog-calendar-out-of-office) - Create an Out of Office event
+- [gog calendar propose-time](/commands/gog-calendar-propose-time) - Generate URL to propose a new meeting time (browser-only feature)
+- [gog calendar raw](/commands/gog-calendar-raw) - Dump raw Google Calendar API response as JSON (Events.Get; lossless; for scripting and LLM consumption)
+- [gog calendar respond](/commands/gog-calendar-respond) - Respond to an event invitation
+- [gog calendar search](/commands/gog-calendar-search) - Search events
+- [gog calendar subscribe](/commands/gog-calendar-subscribe) - Add a calendar to your calendar list
+- [gog calendar team](/commands/gog-calendar-team) - Show events for Workspace group members (service account, direct token, or ADC)
+- [gog calendar time](/commands/gog-calendar-time) - Show server time
+- [gog calendar unsubscribe](/commands/gog-calendar-unsubscribe) - Remove a calendar from your calendar list
+- [gog calendar update](/commands/gog-calendar-update) - Update an event
+- [gog calendar users](/commands/gog-calendar-users) - List workspace users (use their email as calendar ID)
+- [gog calendar working-location](/commands/gog-calendar-working-location) - Set working location (home/office/custom)
+
+## Flags
+
+| Flag | Type | Default | Help |
+| --- | --- | --- | --- |
+| `--access-token` | `string` |  | Use provided access token directly (bypasses stored refresh tokens; token expires in ~1h) |
+| `-a`<br>`--account`<br>`--acct` | `string` |  | Account email, alias, or auto for authenticated Google API commands |
+| `--client` | `string` |  | OAuth client name (selects stored credentials + token bucket) |
+| `--color` | `string` | auto | Color output: auto\|always\|never |
+| `--disable-commands` | `string` |  | Comma-separated list of disabled commands; dot paths allowed |
+| `-n`<br>`--dry-run`<br>`--dryrun`<br>`--noop`<br>`--preview` | `bool` |  | Do not make changes; print intended actions and exit successfully |
+| `--enable-commands` | `string` |  | Comma-separated list of enabled command prefixes; dot paths allowed (restricts CLI) |
+| `--enable-commands-exact` | `string` |  | Comma-separated list of exact enabled commands; dot paths allowed and parent commands do not enable children |
+| `-y`<br>`--force`<br>`--assume-yes`<br>`--yes` | `bool` |  | Skip confirmations for destructive commands |
+| `--gmail-no-send` | `bool` | false | Block Gmail send operations (agent safety) |
+| `-h`<br>`--help` | `kong.helpFlag` |  | Show context-sensitive help. |
+| `--home` | `string` |  | Override gogcli config/data/state/cache root (equivalent to GOG_HOME) |
+| `-j`<br>`--json`<br>`--machine` | `bool` | false | Output JSON to stdout (best for scripting) |
+| `--no-input`<br>`--non-interactive`<br>`--noninteractive` | `bool` |  | Never prompt; fail instead (useful for CI) |
+| `-p`<br>`--plain`<br>`--tsv` | `bool` | false | Output stable, parseable text to stdout (TSV; no colors) |
+| `--readonly` | `bool` | false | Block mutating API requests at runtime; auth add also requests read-only OAuth scopes |
+| `--results-only` | `bool` |  | In JSON mode, emit only the primary result (drops envelope fields like nextPageToken) |
+| `--select`<br>`--pick`<br>`--project` | `string` |  | In JSON mode, select comma-separated fields (best-effort; supports dot paths). Desire path: use --fields for most commands. |
+| `-v`<br>`--verbose` | `bool` |  | Enable verbose logging |
+| `--version` | `kong.VersionFlag` |  | Print version and exit |
+| `--wrap-untrusted` | `bool` | false | In JSON/raw output, wrap fetched text fields in external untrusted-content markers |
+
+## See Also
+
+- [gog](/commands/gog)
+- [Command index](/commands)

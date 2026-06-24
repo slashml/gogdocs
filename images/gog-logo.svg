@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="72" viewBox="0 0 240 72" role="img" aria-label="gog logo">
+  <rect x="2" y="2" width="68" height="68" rx="16" fill="#0f1115"/>
+  <rect x="16" y="16" width="16" height="16" rx="4" fill="#4285f4"/>
+  <rect x="40" y="16" width="16" height="16" rx="4" fill="#ea4335"/>
+  <rect x="16" y="40" width="16" height="16" rx="4" fill="#fbbc04"/>
+  <rect x="40" y="40" width="16" height="16" rx="4" fill="#34a853"/>
+  <text x="86" y="47" fill="#0f1115" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">gog</text>
+</svg>

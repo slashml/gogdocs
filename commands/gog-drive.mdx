@@ -1,0 +1,76 @@
+# `gog drive`
+
+> Generated from `gog schema --json`. Do not edit this page by hand; run `make docs-commands`.
+
+Google Drive
+
+## Usage
+
+```bash
+gog drive (drv) <command> [flags]
+```
+
+## Parent
+
+- [gog](/commands/gog)
+
+## Subcommands
+
+- [gog drive activity](/commands/gog-drive-activity) - Query Drive Activity audit events
+- [gog drive audit](/commands/gog-drive-audit) - Audit Drive sharing without mutation
+- [gog drive bulk](/commands/gog-drive-bulk) - Bulk Drive permission operations
+- [gog drive changes](/commands/gog-drive-changes) - Track Drive changes for sync and automation
+- [gog drive comments](/commands/gog-drive-comments) - Manage comments on files
+- [gog drive copy](/commands/gog-drive-copy) - Copy a file
+- [gog drive delete](/commands/gog-drive-delete) - Move a file to trash (use --permanent to delete forever)
+- [gog drive download](/commands/gog-drive-download) - Download a file (exports Google Docs formats)
+- [gog drive drives](/commands/gog-drive-drives) - List shared drives (Team Drives)
+- [gog drive du](/commands/gog-drive-du) - Summarize Drive folder sizes
+- [gog drive get](/commands/gog-drive-get) - Get file metadata
+- [gog drive inventory](/commands/gog-drive-inventory) - Export a read-only Drive inventory
+- [gog drive labels](/commands/gog-drive-labels) - Read and modify Drive labels
+- [gog drive ls](/commands/gog-drive-ls) - List files in a folder (default: root)
+- [gog drive mkdir](/commands/gog-drive-mkdir) - Create a folder
+- [gog drive move](/commands/gog-drive-move) - Move a file to a different folder
+- [gog drive permissions](/commands/gog-drive-permissions) - List permissions on a file
+- [gog drive raw](/commands/gog-drive-raw) - Dump raw Google Drive API response as JSON (Files.Get; lossless; for scripting and LLM consumption)
+- [gog drive rename](/commands/gog-drive-rename) - Rename a file or folder
+- [gog drive revisions](/commands/gog-drive-revisions) - List and inspect file revisions
+- [gog drive search](/commands/gog-drive-search) - Full-text search across Drive
+- [gog drive share](/commands/gog-drive-share) - Share a file or folder
+- [gog drive shortcut](/commands/gog-drive-shortcut) - Manage shortcuts to Drive files and folders
+- [gog drive tree](/commands/gog-drive-tree) - Print a read-only folder tree
+- [gog drive unshare](/commands/gog-drive-unshare) - Remove a permission from a file
+- [gog drive upload](/commands/gog-drive-upload) - Upload a file
+- [gog drive url](/commands/gog-drive-url) - Print web URLs for files
+
+## Flags
+
+| Flag | Type | Default | Help |
+| --- | --- | --- | --- |
+| `--access-token` | `string` |  | Use provided access token directly (bypasses stored refresh tokens; token expires in ~1h) |
+| `-a`<br>`--account`<br>`--acct` | `string` |  | Account email, alias, or auto for authenticated Google API commands |
+| `--client` | `string` |  | OAuth client name (selects stored credentials + token bucket) |
+| `--color` | `string` | auto | Color output: auto\|always\|never |
+| `--disable-commands` | `string` |  | Comma-separated list of disabled commands; dot paths allowed |
+| `-n`<br>`--dry-run`<br>`--dryrun`<br>`--noop`<br>`--preview` | `bool` |  | Do not make changes; print intended actions and exit successfully |
+| `--enable-commands` | `string` |  | Comma-separated list of enabled command prefixes; dot paths allowed (restricts CLI) |
+| `--enable-commands-exact` | `string` |  | Comma-separated list of exact enabled commands; dot paths allowed and parent commands do not enable children |
+| `-y`<br>`--force`<br>`--assume-yes`<br>`--yes` | `bool` |  | Skip confirmations for destructive commands |
+| `--gmail-no-send` | `bool` | false | Block Gmail send operations (agent safety) |
+| `-h`<br>`--help` | `kong.helpFlag` |  | Show context-sensitive help. |
+| `--home` | `string` |  | Override gogcli config/data/state/cache root (equivalent to GOG_HOME) |
+| `-j`<br>`--json`<br>`--machine` | `bool` | false | Output JSON to stdout (best for scripting) |
+| `--no-input`<br>`--non-interactive`<br>`--noninteractive` | `bool` |  | Never prompt; fail instead (useful for CI) |
+| `-p`<br>`--plain`<br>`--tsv` | `bool` | false | Output stable, parseable text to stdout (TSV; no colors) |
+| `--readonly` | `bool` | false | Block mutating API requests at runtime; auth add also requests read-only OAuth scopes |
+| `--results-only` | `bool` |  | In JSON mode, emit only the primary result (drops envelope fields like nextPageToken) |
+| `--select`<br>`--pick`<br>`--project` | `string` |  | In JSON mode, select comma-separated fields (best-effort; supports dot paths). Desire path: use --fields for most commands. |
+| `-v`<br>`--verbose` | `bool` |  | Enable verbose logging |
+| `--version` | `kong.VersionFlag` |  | Print version and exit |
+| `--wrap-untrusted` | `bool` | false | In JSON/raw output, wrap fetched text fields in external untrusted-content markers |
+
+## See Also
+
+- [gog](/commands/gog)
+- [Command index](/commands)

@@ -1,0 +1,93 @@
+# `gog`
+
+> Generated from `gog schema --json`. Do not edit this page by hand; run `make docs-commands`.
+
+Google CLI for Gmail/Calendar/Chat/Classroom/Drive/Contacts/Tasks/Sheets/Docs/Slides/People/Forms/Meet/App Script/Analytics/Search Console/Groups/Admin/Keep/YouTube/Maps/Photos
+
+Config:
+  file: <config-dir>/gogcli/config.json
+  keyring backend: auto (source: default)
+
+## Usage
+
+```bash
+gog <command> [flags]
+```
+
+## Subcommands
+
+- [gog admin](/commands/gog-admin) - Google Workspace Admin (Directory API) - requires domain-wide delegation
+- [gog analytics](/commands/gog-analytics) - Google Analytics
+- [gog api](/commands/gog-api) - Google Discovery APIs and generic method calls
+- [gog appscript](/commands/gog-appscript) - Google Apps Script
+- [gog auth](/commands/gog-auth) - Auth and credentials
+- [gog backup](/commands/gog-backup) - Encrypted Google account backups
+- [gog batch](/commands/gog-batch) - Build and submit persisted Google Docs request batches
+- [gog calendar](/commands/gog-calendar) - Google Calendar
+- [gog chat](/commands/gog-chat) - Google Chat
+- [gog classroom](/commands/gog-classroom) - Google Classroom
+- [gog completion](/commands/gog-completion) - Generate shell completion scripts
+- [gog config](/commands/gog-config) - Manage configuration
+- [gog contacts](/commands/gog-contacts) - Google Contacts
+- [gog docs](/commands/gog-docs) - Google Docs (export via Drive)
+- [gog download](/commands/gog-download) - Download a Drive file (alias for 'drive download')
+- [gog drive](/commands/gog-drive) - Google Drive
+- [gog forms](/commands/gog-forms) - Google Forms
+- [gog gmail](/commands/gog-gmail) - Gmail
+- [gog groups](/commands/gog-groups) - Cloud Identity Groups (Workspace only)
+- [gog keep](/commands/gog-keep) - Google Keep (Workspace only)
+- [gog login](/commands/gog-login) - Authorize and store a refresh token (alias for 'auth add')
+- [gog logout](/commands/gog-logout) - Remove a stored refresh token (alias for 'auth remove')
+- [gog ls](/commands/gog-ls) - List Drive files (alias for 'drive ls')
+- [gog maps](/commands/gog-maps) - Google Maps
+- [gog mcp](/commands/gog-mcp) - Run a typed, allowlisted MCP server over stdio
+- [gog me](/commands/gog-me) - Show your profile (alias for 'people me')
+- [gog meet](/commands/gog-meet) - Google Meet
+- [gog open](/commands/gog-open) - Print a best-effort web URL for a Google URL/ID (offline)
+- [gog people](/commands/gog-people) - Google People
+- [gog photos](/commands/gog-photos) - Google Photos Library and Picker APIs
+- [gog schema](/commands/gog-schema) - Machine-readable command/flag schema
+- [gog search](/commands/gog-search) - Search Drive files (alias for 'drive search')
+- [gog searchconsole](/commands/gog-searchconsole) - Google Search Console
+- [gog send](/commands/gog-send) - Send an email (alias for 'gmail send')
+- [gog sheets](/commands/gog-sheets) - Google Sheets
+- [gog sites](/commands/gog-sites) - Google Sites (Drive-backed)
+- [gog slides](/commands/gog-slides) - Google Slides
+- [gog status](/commands/gog-status) - Show auth/config status (alias for 'auth status')
+- [gog tasks](/commands/gog-tasks) - Google Tasks
+- [gog time](/commands/gog-time) - Local time utilities
+- [gog upload](/commands/gog-upload) - Upload a file to Drive (alias for 'drive upload')
+- [gog version](/commands/gog-version) - Print version
+- [gog whoami](/commands/gog-whoami) - Show your profile (alias for 'people me')
+- [gog youtube](/commands/gog-youtube) - YouTube Data API (search, activities, videos, playlists, comments, channels)
+- [gog zoom](/commands/gog-zoom) - Zoom
+
+## Flags
+
+| Flag | Type | Default | Help |
+| --- | --- | --- | --- |
+| `--access-token` | `string` |  | Use provided access token directly (bypasses stored refresh tokens; token expires in ~1h) |
+| `-a`<br>`--account`<br>`--acct` | `string` |  | Account email, alias, or auto for authenticated Google API commands |
+| `--client` | `string` |  | OAuth client name (selects stored credentials + token bucket) |
+| `--color` | `string` | auto | Color output: auto\|always\|never |
+| `--disable-commands` | `string` |  | Comma-separated list of disabled commands; dot paths allowed |
+| `-n`<br>`--dry-run`<br>`--dryrun`<br>`--noop`<br>`--preview` | `bool` |  | Do not make changes; print intended actions and exit successfully |
+| `--enable-commands` | `string` |  | Comma-separated list of enabled command prefixes; dot paths allowed (restricts CLI) |
+| `--enable-commands-exact` | `string` |  | Comma-separated list of exact enabled commands; dot paths allowed and parent commands do not enable children |
+| `-y`<br>`--force`<br>`--assume-yes`<br>`--yes` | `bool` |  | Skip confirmations for destructive commands |
+| `--gmail-no-send` | `bool` | false | Block Gmail send operations (agent safety) |
+| `-h`<br>`--help` | `kong.helpFlag` |  | Show context-sensitive help. |
+| `--home` | `string` |  | Override gogcli config/data/state/cache root (equivalent to GOG_HOME) |
+| `-j`<br>`--json`<br>`--machine` | `bool` | false | Output JSON to stdout (best for scripting) |
+| `--no-input`<br>`--non-interactive`<br>`--noninteractive` | `bool` |  | Never prompt; fail instead (useful for CI) |
+| `-p`<br>`--plain`<br>`--tsv` | `bool` | false | Output stable, parseable text to stdout (TSV; no colors) |
+| `--readonly` | `bool` | false | Block mutating API requests at runtime; auth add also requests read-only OAuth scopes |
+| `--results-only` | `bool` |  | In JSON mode, emit only the primary result (drops envelope fields like nextPageToken) |
+| `--select`<br>`--pick`<br>`--project` | `string` |  | In JSON mode, select comma-separated fields (best-effort; supports dot paths). Desire path: use --fields for most commands. |
+| `-v`<br>`--verbose` | `bool` |  | Enable verbose logging |
+| `--version` | `kong.VersionFlag` |  | Print version and exit |
+| `--wrap-untrusted` | `bool` | false | In JSON/raw output, wrap fetched text fields in external untrusted-content markers |
+
+## See Also
+
+- [Command index](/commands)

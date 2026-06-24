@@ -1,0 +1,84 @@
+# `gog sheets`
+
+> Generated from `gog schema --json`. Do not edit this page by hand; run `make docs-commands`.
+
+Google Sheets
+
+## Usage
+
+```bash
+gog sheets (sheet) <command> [flags]
+```
+
+## Parent
+
+- [gog](/commands/gog)
+
+## Subcommands
+
+- [gog sheets add-tab](/commands/gog-sheets-add-tab) - Add a new tab/sheet to a spreadsheet
+- [gog sheets append](/commands/gog-sheets-append) - Append values to a range
+- [gog sheets banding](/commands/gog-sheets-banding) - Manage alternating color banding
+- [gog sheets batch-update](/commands/gog-sheets-batch-update) - Update values in multiple ranges with one API request
+- [gog sheets chart](/commands/gog-sheets-chart) - Manage spreadsheet charts
+- [gog sheets clear](/commands/gog-sheets-clear) - Clear values in a range
+- [gog sheets conditional-format](/commands/gog-sheets-conditional-format) - Manage conditional formatting rules
+- [gog sheets copy](/commands/gog-sheets-copy) - Copy a Google Sheet
+- [gog sheets copy-paste](/commands/gog-sheets-copy-paste) - Copy a range's values/formulas/format to another range (tiles to fill down/across)
+- [gog sheets create](/commands/gog-sheets-create) - Create a new spreadsheet
+- [gog sheets delete-dimension](/commands/gog-sheets-delete-dimension) - Delete rows or columns while preserving intersecting tables
+- [gog sheets delete-tab](/commands/gog-sheets-delete-tab) - Delete a tab/sheet from a spreadsheet (use --force to skip confirmation)
+- [gog sheets export](/commands/gog-sheets-export) - Export a Google Sheet (pdf|xlsx|csv) via Drive
+- [gog sheets find-replace](/commands/gog-sheets-find-replace) - Find and replace text across a spreadsheet
+- [gog sheets format](/commands/gog-sheets-format) - Apply cell formatting to a range
+- [gog sheets freeze](/commands/gog-sheets-freeze) - Freeze rows and columns on a sheet
+- [gog sheets get](/commands/gog-sheets-get) - Get values from a range
+- [gog sheets insert](/commands/gog-sheets-insert) - Insert empty rows or columns into a sheet
+- [gog sheets links](/commands/gog-sheets-links) - Get or set cell hyperlinks
+- [gog sheets merge](/commands/gog-sheets-merge) - Merge cells in a range
+- [gog sheets metadata](/commands/gog-sheets-metadata) - Get spreadsheet metadata
+- [gog sheets named-ranges](/commands/gog-sheets-named-ranges) - Manage named ranges
+- [gog sheets notes](/commands/gog-sheets-notes) - Get cell notes from a range
+- [gog sheets number-format](/commands/gog-sheets-number-format) - Apply number format to a range
+- [gog sheets raw](/commands/gog-sheets-raw) - Dump raw Google Sheets API response as JSON (Spreadsheets.Get; lossless; for scripting and LLM consumption)
+- [gog sheets read-format](/commands/gog-sheets-read-format) - Read cell formatting from a range
+- [gog sheets rename-tab](/commands/gog-sheets-rename-tab) - Rename a tab/sheet in a spreadsheet
+- [gog sheets reorder-tab](/commands/gog-sheets-reorder-tab) - Move a tab/sheet to a specific 0-based position in the spreadsheet
+- [gog sheets resize-columns](/commands/gog-sheets-resize-columns) - Resize sheet columns
+- [gog sheets resize-rows](/commands/gog-sheets-resize-rows) - Resize sheet rows
+- [gog sheets table](/commands/gog-sheets-table) - Manage Google Sheets tables
+- [gog sheets unmerge](/commands/gog-sheets-unmerge) - Unmerge cells in a range
+- [gog sheets update](/commands/gog-sheets-update) - Update values in a range
+- [gog sheets update-note](/commands/gog-sheets-update-note) - Set or clear a cell note
+- [gog sheets validation](/commands/gog-sheets-validation) - Manage cell data validation rules
+
+## Flags
+
+| Flag | Type | Default | Help |
+| --- | --- | --- | --- |
+| `--access-token` | `string` |  | Use provided access token directly (bypasses stored refresh tokens; token expires in ~1h) |
+| `-a`<br>`--account`<br>`--acct` | `string` |  | Account email, alias, or auto for authenticated Google API commands |
+| `--client` | `string` |  | OAuth client name (selects stored credentials + token bucket) |
+| `--color` | `string` | auto | Color output: auto\|always\|never |
+| `--disable-commands` | `string` |  | Comma-separated list of disabled commands; dot paths allowed |
+| `-n`<br>`--dry-run`<br>`--dryrun`<br>`--noop`<br>`--preview` | `bool` |  | Do not make changes; print intended actions and exit successfully |
+| `--enable-commands` | `string` |  | Comma-separated list of enabled command prefixes; dot paths allowed (restricts CLI) |
+| `--enable-commands-exact` | `string` |  | Comma-separated list of exact enabled commands; dot paths allowed and parent commands do not enable children |
+| `-y`<br>`--force`<br>`--assume-yes`<br>`--yes` | `bool` |  | Skip confirmations for destructive commands |
+| `--gmail-no-send` | `bool` | false | Block Gmail send operations (agent safety) |
+| `-h`<br>`--help` | `kong.helpFlag` |  | Show context-sensitive help. |
+| `--home` | `string` |  | Override gogcli config/data/state/cache root (equivalent to GOG_HOME) |
+| `-j`<br>`--json`<br>`--machine` | `bool` | false | Output JSON to stdout (best for scripting) |
+| `--no-input`<br>`--non-interactive`<br>`--noninteractive` | `bool` |  | Never prompt; fail instead (useful for CI) |
+| `-p`<br>`--plain`<br>`--tsv` | `bool` | false | Output stable, parseable text to stdout (TSV; no colors) |
+| `--readonly` | `bool` | false | Block mutating API requests at runtime; auth add also requests read-only OAuth scopes |
+| `--results-only` | `bool` |  | In JSON mode, emit only the primary result (drops envelope fields like nextPageToken) |
+| `--select`<br>`--pick`<br>`--project` | `string` |  | In JSON mode, select comma-separated fields (best-effort; supports dot paths). Desire path: use --fields for most commands. |
+| `-v`<br>`--verbose` | `bool` |  | Enable verbose logging |
+| `--version` | `kong.VersionFlag` |  | Print version and exit |
+| `--wrap-untrusted` | `bool` | false | In JSON/raw output, wrap fetched text fields in external untrusted-content markers |
+
+## See Also
+
+- [gog](/commands/gog)
+- [Command index](/commands)

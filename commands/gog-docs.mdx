@@ -1,0 +1,98 @@
+# `gog docs`
+
+> Generated from `gog schema --json`. Do not edit this page by hand; run `make docs-commands`.
+
+Google Docs (export via Drive)
+
+## Usage
+
+```bash
+gog docs (doc) <command> [flags]
+```
+
+## Parent
+
+- [gog](/commands/gog)
+
+## Subcommands
+
+- [gog docs add-tab](/commands/gog-docs-add-tab) - Add a tab to a Google Doc
+- [gog docs cat](/commands/gog-docs-cat) - Print a Google Doc as plain text
+- [gog docs cell-style](/commands/gog-docs-cell-style) - Apply table cell, border, padding, alignment, and text styling
+- [gog docs cell-update](/commands/gog-docs-cell-update) - Replace or append content inside a specific table cell
+- [gog docs clear](/commands/gog-docs-clear) - Clear all content from a Google Doc
+- [gog docs comments](/commands/gog-docs-comments) - Manage comments on files
+- [gog docs copy](/commands/gog-docs-copy) - Copy a Google Doc
+- [gog docs create](/commands/gog-docs-create) - Create a Google Doc
+- [gog docs delete](/commands/gog-docs-delete) - Delete text range from document
+- [gog docs delete-tab](/commands/gog-docs-delete-tab) - Delete a tab from a Google Doc
+- [gog docs edit](/commands/gog-docs-edit) - Find and replace text in a Google Doc
+- [gog docs export](/commands/gog-docs-export) - Export a Google Doc (pdf|docx|txt|md|html)
+- [gog docs find-range](/commands/gog-docs-find-range) - Find text and print Docs API UTF-16 index ranges
+- [gog docs find-replace](/commands/gog-docs-find-replace) - Find and replace text. Supports plain text or markdown with images; use --first for a single occurrence.
+- [gog docs footer](/commands/gog-docs-footer) - List, create, or delete document footers
+- [gog docs format](/commands/gog-docs-format) - Apply text or paragraph formatting to a Google Doc
+- [gog docs header](/commands/gog-docs-header) - List, create, or delete document headers
+- [gog docs headings](/commands/gog-docs-headings) - List document headings
+- [gog docs images](/commands/gog-docs-images) - List document images
+- [gog docs info](/commands/gog-docs-info) - Get Google Doc metadata
+- [gog docs insert](/commands/gog-docs-insert) - Insert text at a specific position
+- [gog docs insert-date-chip](/commands/gog-docs-insert-date-chip) - Insert a native date smart chip
+- [gog docs insert-file-chip](/commands/gog-docs-insert-file-chip) - Insert a native Drive file smart chip
+- [gog docs insert-footnote](/commands/gog-docs-insert-footnote) - Insert and populate a footnote
+- [gog docs insert-horizontal-rule](/commands/gog-docs-insert-horizontal-rule) - Insert a paragraph-border horizontal rule
+- [gog docs insert-image](/commands/gog-docs-insert-image) - Insert a public image URL or upload a local image into a Google Doc
+- [gog docs insert-page-break](/commands/gog-docs-insert-page-break) - Insert a page break at a specific position (or end-of-doc with --at-end)
+- [gog docs insert-person](/commands/gog-docs-insert-person) - Insert a native person smart chip
+- [gog docs insert-section-break](/commands/gog-docs-insert-section-break) - Insert a continuous or next-page section break
+- [gog docs insert-table](/commands/gog-docs-insert-table) - Insert a native table at a specific position (or end-of-doc with --at-end), optionally populated via --values-json
+- [gog docs list-tabs](/commands/gog-docs-list-tabs) - List all tabs in a Google Doc
+- [gog docs named-range](/commands/gog-docs-named-range) - Manage named ranges
+- [gog docs page-layout](/commands/gog-docs-page-layout) - Set page layout (pageless|pages) on an existing Google Doc
+- [gog docs paragraphs](/commands/gog-docs-paragraphs) - List document paragraphs
+- [gog docs raw](/commands/gog-docs-raw) - Dump raw Google Docs API response as JSON (Documents.Get; lossless; for scripting and LLM consumption)
+- [gog docs rename-tab](/commands/gog-docs-rename-tab) - Rename a tab in a Google Doc
+- [gog docs replace-image](/commands/gog-docs-replace-image) - Replace an existing image without changing its position or bounds
+- [gog docs section-columns](/commands/gog-docs-section-columns) - Set the column count for a document section
+- [gog docs sed](/commands/gog-docs-sed) - Regex find/replace (sed-style: s/pattern/replacement/g)
+- [gog docs structure](/commands/gog-docs-structure) - Show document structure with numbered paragraphs
+- [gog docs table-column](/commands/gog-docs-table-column) - Insert or delete native table columns
+- [gog docs table-column-width](/commands/gog-docs-table-column-width) - Set or reset native table column widths
+- [gog docs table-merge](/commands/gog-docs-table-merge) - Merge a native table cell range
+- [gog docs table-row](/commands/gog-docs-table-row) - Insert, delete, style, or pin native table rows
+- [gog docs table-unmerge](/commands/gog-docs-table-unmerge) - Unmerge the region containing a native table cell
+- [gog docs tables](/commands/gog-docs-tables) - List native tables
+- [gog docs tabs](/commands/gog-docs-tabs) - Manage Google Doc tabs
+- [gog docs update](/commands/gog-docs-update) - Insert or replace text at a specific index or range in a Google Doc
+- [gog docs write](/commands/gog-docs-write) - Write content to a Google Doc
+
+## Flags
+
+| Flag | Type | Default | Help |
+| --- | --- | --- | --- |
+| `--access-token` | `string` |  | Use provided access token directly (bypasses stored refresh tokens; token expires in ~1h) |
+| `-a`<br>`--account`<br>`--acct` | `string` |  | Account email, alias, or auto for authenticated Google API commands |
+| `--client` | `string` |  | OAuth client name (selects stored credentials + token bucket) |
+| `--color` | `string` | auto | Color output: auto\|always\|never |
+| `--disable-commands` | `string` |  | Comma-separated list of disabled commands; dot paths allowed |
+| `-n`<br>`--dry-run`<br>`--dryrun`<br>`--noop`<br>`--preview` | `bool` |  | Do not make changes; print intended actions and exit successfully |
+| `--enable-commands` | `string` |  | Comma-separated list of enabled command prefixes; dot paths allowed (restricts CLI) |
+| `--enable-commands-exact` | `string` |  | Comma-separated list of exact enabled commands; dot paths allowed and parent commands do not enable children |
+| `-y`<br>`--force`<br>`--assume-yes`<br>`--yes` | `bool` |  | Skip confirmations for destructive commands |
+| `--gmail-no-send` | `bool` | false | Block Gmail send operations (agent safety) |
+| `-h`<br>`--help` | `kong.helpFlag` |  | Show context-sensitive help. |
+| `--home` | `string` |  | Override gogcli config/data/state/cache root (equivalent to GOG_HOME) |
+| `-j`<br>`--json`<br>`--machine` | `bool` | false | Output JSON to stdout (best for scripting) |
+| `--no-input`<br>`--non-interactive`<br>`--noninteractive` | `bool` |  | Never prompt; fail instead (useful for CI) |
+| `-p`<br>`--plain`<br>`--tsv` | `bool` | false | Output stable, parseable text to stdout (TSV; no colors) |
+| `--readonly` | `bool` | false | Block mutating API requests at runtime; auth add also requests read-only OAuth scopes |
+| `--results-only` | `bool` |  | In JSON mode, emit only the primary result (drops envelope fields like nextPageToken) |
+| `--select`<br>`--pick`<br>`--project` | `string` |  | In JSON mode, select comma-separated fields (best-effort; supports dot paths). Desire path: use --fields for most commands. |
+| `-v`<br>`--verbose` | `bool` |  | Enable verbose logging |
+| `--version` | `kong.VersionFlag` |  | Print version and exit |
+| `--wrap-untrusted` | `bool` | false | In JSON/raw output, wrap fetched text fields in external untrusted-content markers |
+
+## See Also
+
+- [gog](/commands/gog)
+- [Command index](/commands)
